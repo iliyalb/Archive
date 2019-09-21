@@ -1,0 +1,30 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="WebForms.MasterPage.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server" />
+</head>
+
+<body>
+    <header style="height: 200px; width: 100%; background-color: aliceblue;">
+        This is a header text...
+    </header>
+
+    <form id="mainForm" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="cphMain" runat="server">
+                <!-- Don't type here -->
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <footer style="height: 200px; width: 100%; background-color: aliceblue;">
+        This is a footer text...
+    </footer>
+</body>
+
+</html>
