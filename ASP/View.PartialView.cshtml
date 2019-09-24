@@ -1,0 +1,25 @@
+﻿// ~/Views/_PartialView01.cshtml:
+
+<div>
+    @System.DateTime.Now.ToString()
+</div>
+
+// ~/Views/Home/TestAction1.cshtml:
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TestAction1</title>
+</head>
+<body>
+    <div>
+        @Html.Partial("~/Views/_PartialView01.cshtml")
+    </div>
+</body>
+</html>
