@@ -1,0 +1,11 @@
+<!-- ~/Views/_ViewStart is the default layout for views that don't have a layout-->
+@{
+    if (System.DateTime.Now.Hour > 12)
+    {
+        Layout = "~/Views/Shared/_NightLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    }
+}

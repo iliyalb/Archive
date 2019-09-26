@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Layout02";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<!-- @RenderSection("zanbil", required: false) in ~/Views/Shared/_SiteLayout.cshtml -->
+@section zanbil
+{
+    <div>Khiarshoor</div>
+    <div>Havij</div>
+    <div>Shalgham</div>
+    <div>Sibzamini</div>
+}
+
+<!-- @RenderSection("footer", required: false) in ~/Views/Shared/_SiteLayout.cshtml -->
+@section footer
+{
+    <div>Link 1</div>
+    <div>Link 2</div>
+    <div>Link 3</div>
+}
+
+<!-- Condition with RenderSection in SiteLayout -->
+@if (IsSectionDefined("zanbil"))
+{
+    @RenderSection("zanbil", required: false)
+}
+else
+{
+    <div>Zanbil is not defined</div>
+}
