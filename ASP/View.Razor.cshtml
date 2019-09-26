@@ -1,0 +1,175 @@
+﻿<!-- Razor example -->
+<div> 
+    @for (int i = 1; i <= 10; i++)
+    {
+        <p>This is a paragraph. Number: @i</p>
+    }
+</div>
+
+<!-- Razor scope -->
+<div>
+    @{
+        int i = 1;
+        for(;i <= 10;i++)
+        {
+            <p>This is a paragraph. Number: @i</p>
+        }  
+    }
+</div>
+
+<!-- Razor variable -->
+<div> 
+    @{
+        string havij = "Hello Havij";
+        <span>@havij</span>
+    }
+</div>
+
+<!-- Hello Havij.Bye Havij -->
+<div> 
+    @{
+        string havij = "Hello Havij";
+        <span>@(havij).Bye Havij</span>
+    }
+</div> 
+
+<!-- Email -->
+<div>
+    mail@mehrdadnaderi.com
+    mehrdadnaderi@g.harvard.edu
+</div>
+
+<!-- Escape character -->
+<div> 
+    @@ASP.NET
+</div>
+
+<!-- Injection Script Attack (XSS) with Auto HTML Encoder -->
+<div>   
+    @{
+        string message = "<script>alert('Hello Havij');</script>";
+        <span>@message</span>
+    }
+</div>
+
+<!-- Runs scripts -->
+<div> 
+    @{
+        string message = "<script>alert('Hello Havij');</script>";
+        <span>@Html.Raw(message)</span>
+    }
+</div>
+
+<!-- Razor comment -->
+<div>
+    @*
+        This line does not compile
+    *@
+</div>
+
+<!-- Implicit Code Expression -->
+<div>
+    @{
+        string name1 = "Mehrdad Naderi";
+        for (int i = 0; i < 10; i++)
+        {
+            string name2 = "havij haviji";
+        }
+    }
+    <span>@name1</span>
+    <!-- Cannot be accessed -->
+    @*<span>@name2</span>*@
+</div>
+
+<!-- Explicit Code Expression -->
+<div>
+    (1 + 2) = @(1 + 2)
+</div>
+
+<!-- Unencoded Code Expression -->
+<div> 
+    <span>@Html.Raw("<b>This is a test text.</b>")</span>
+</div>
+
+<!-- Code Block -->
+<div> 
+    @{
+        int i = 10;
+        int j = 20;
+        int sum = i + j;
+        <span>@sum</span> 
+    }
+</div>
+
+<!-- Combining Code and Plain Text -->
+<div>
+    @for (int i = 0; i < 3; i++)
+    {
+        <text>This is a text.</text>
+    }
+    @for (int i = 0; i < 3; i++)
+    {
+        @: This is a text.
+    }
+</div>
+
+<!-- Combining Text and Markup -->
+<div> 
+    @{
+        string message = "This is a test message.";
+        <p>@message</p>
+    }
+</div>
+
+<!-- Code delimiter -->
+<div> 
+    @@ASP.NET
+    <br />
+    &#64;ASP.NET
+</div>
+
+<!-- Calling Method -->
+<div>
+    <!-- helper == writing functions -->
+    @helper SayHello(string name)
+    {
+        <div>Hello @name</div>
+    }
+
+    @SayHello("Mehrdad Naderi")
+    <br />
+    @SayHello("Havij Haviji")
+    <br />
+    @SayHello("Shirin Shirini")
+</div>
+
+<!-- Inserting Data Values -->
+<div> 
+    <!-- public ActionResult RazorAction() {ViewBag.Message = "text"; return View();} -->
+    @ViewBag.Message
+</div>
+
+<!-- Setting Attribute Values -->
+<div>
+    @for (int i = 1; i <= 3; i++)
+    {
+        <img src="../../Contents/Images/supex@(i).jpg" alt="logo@(i)" width="100" />
+        <br />
+    }
+</div>
+
+<!-- Using Condition Statement -->
+<div>
+    @if ((int)ViewBag.Number > 10)
+    {
+        <img src="../../Contents/Images/supex1.jpg" alt="logo1" width="100" />
+    }
+    else if ((int)ViewBag.Number < 10)
+    {
+        <img src="../../Contents/Images/supex2.jpg" alt="logo2" width="100" />
+    }
+    else
+    {
+        <img src="../../Contents/Images/supex3.jpg" alt="logo3" width="100" />
+    }
+</div>
