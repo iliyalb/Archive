@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <style>
+        .datetimeclass {
+            color: green;
+            text-decoration: none;
+        }
+
+        #ajaxloader{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @*@Ajax.ActionLink("Show DateTime",
+                            "CallDateTimePartialView"
+                            ,
+                            null
+                            , new AjaxOptions
+                            {
+                                UpdateTargetId = "divDateTime",
+                                InsertionMode = InsertionMode.InsertAfter,
+                                HttpMethod = "GET"
+                            },
+                                     new { @class = "datetimeClass" })*@
+
+        @Ajax.ActionLink("Show DateTime", "callDateTimePartialView"
+                         , new AjaxOptions
+                         {
+                             UpdateTargetId = "divDateTime",
+                             InsertionMode = InsertionMode.InsertAfter,
+                             HttpMethod = "GET",
+                             LoadingElementId = "ajaxloader"
+                         })
+
+        // Controller:
+        <!-- public PartialViewResult CallDateTimePartialView()
+        {
+            System.Threading.Thread.Sleep(5000);
+            return PartialView();
+        } -->
+
+        // View (Partial):
+        <!-- <span>
+            @System.DateTime.Now.ToString("yyyy/MM/dd - HH:mm:ss")
+        </span> -->
+    </div>
+    <div id="ajaxloader">
+        Please Wait...
+        <img src="../../Contents/ajax-loader.gif" />
+    </div>
+    <div id="divDateTime">
+        My Date Time:
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AjaxForm</title>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script type="text/javascript">
+        function OnFailure()
+        {
+            $("#searchResults").html("Sorry!");
+        }
+    </script>
+
+    <style>
+        #ajaxloader{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        @using (Ajax.BeginForm("Search", new AjaxOptions
+        {
+            OnFailure = "seachField",
+            UpdateTargetId = "searchResults",
+            InsertionMode = InsertionMode.InsertAfter,
+            HttpMethod = "GET",
+            LoadingElementId = "ajaxloader"
+        }))
+        {
+            <input type="text" name="searchText" id="searchText" />
+            <input type="submit" />
+            <img id="ajaxloader" src="../../Contents/ajax-loader.gif" />
+        }
+        <div id="searchResults">
+            Search Result: 
+        </div>
+        // Controller:
+        <!-- public ActionResult Search(string searchText)
+        {
+            System.Threading.Thread.Sleep(5000);
+            return Content("This is a result for " + searchText);
+        } -->
+    </div>
+</body>
+</html>
