@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Women Footwares"
+                        , "Footwares", "Clothing"
+                        , new { Area = "Women" }
+                        , null)
+        |
+        @Html.ActionLink("Men Footwares",
+                        "Footwares", "Clothing"
+                        ,new { Area = "Men" }
+                        , null)
+    </div>
+</body>
+</html>
+// ~/Areas/Men/ClothingController.cs & ~/Areas/Women/ClothingController.cs:
+    public ActionResult Footwares()
+    {
+        return View();
+    }
+
+// ~/Areas/Men/Views/Clothing/Footwares.cshtml
+    <div>
+        @Html.ActionLink("Women Footwares",
+            actionName: "Footwares",
+            controllerName: "Clothing",
+            routeValues: new { Area = "Women" },
+            htmlAttributes: null
+        )
+        |
+        @Html.ActionLink("Home Index",
+                actionName: "Index",
+                controllerName: "Home",
+                routeValues: new { Area = "" },
+                htmlAttributes: null)
+    </div>
+
+// ~/Areas/Women/Views/Clothing/Footwares.cshtml
+    <div> 
+        @Html.ActionLink("Men Footwares",
+            actionName: "Footwares",
+            controllerName: "Clothing",
+            routeValues: new { Area = "Men" },
+            htmlAttributes: null
+        )
+        |
+        @Html.ActionLink("Home Index",
+                        actionName: "Index",
+                        controllerName: "Home",
+                        routeValues: new { Area = "" },
+                        htmlAttributes: null)
+    </div>
