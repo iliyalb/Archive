@@ -6,9 +6,9 @@ function greet(name, lastName) {
     if (typeof name !== "undefined") { temp = 'Hello ' + name; }
     if (typeof lastName !== "undefined") { temp = 'Hello ' + name + ' ' + lastName; }
 
-    console.log(temp);
+    return temp;
 }
 
-greet();
-greet('Alice');
-greet('John', 'Smith');
+console.log(greet());
+console.log(greet('Alice'));
+console.log(greet('John', 'Smith'));
