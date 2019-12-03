@@ -1,0 +1,22 @@
+.wrapper-main{
+    margin: 0 20px;
+}
+
+.wrapper-gallery {
+    margin: 0 20vw;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+}
+
+#header-main nav {
+    display: grid;
+    grid-template-columns: 240px 3fr;
+}
