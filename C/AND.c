@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     unsigned int b = 13; // 0000 1101
     int result = a & b;  // 0000 1100
 
-    printf("RESULT: %d", result);
+    printf("RESULT: %d\n", result);
 
     return 0;
 }
