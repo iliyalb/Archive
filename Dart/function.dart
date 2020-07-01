@@ -11,8 +11,8 @@ int mul(int a, int b) {
 }
 
 // Shorthand function where Arrow means '{return __;}'
-int timesTwo(int x) => (x * 2);
-int squareNumber(int x) => (x * x);
+dynamic timesTwo(var x) => (x * 2);
+dynamic squareNumber(var x) => (x * x);
 
 // Pass functions as objects
 int runTwice(int x, Function f) {
