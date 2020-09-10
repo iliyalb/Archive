@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class MyActivity extends Activity {
 
     @Override
@@ -17,7 +16,7 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
-        Button MyButton = (Button)findViewById(R.id.havijButton);
+        Button MyButton = (Button) findViewById(R.id.havijButton);
         MyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,14 +26,12 @@ public class MyActivity extends Activity {
         });
     }
 
-    public void toastClickListener(View v)
-    {
+    public void toastClickListener(View v) {
         Toast.makeText(MyActivity.this, "This is a test text.", Toast.LENGTH_LONG).show();
     }
 
-    public void showFullnameClickListener(View v)
-    {
-        EditText etFullname = (EditText)findViewById(R.id.fullname);
+    public void showFullnameClickListener(View v) {
+        EditText etFullname = (EditText) findViewById(R.id.fullname);
         String fullname = etFullname.getText().toString();
         Toast.makeText(this, fullname, Toast.LENGTH_LONG).show();
     }
