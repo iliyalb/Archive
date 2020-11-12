@@ -1,4 +1,5 @@
-
+.vs
+out
 C/*.exe
 C/file.txt
 C/file_converted.txt
