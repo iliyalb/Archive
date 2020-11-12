@@ -8,7 +8,6 @@ This repository serves as a dumpster for codes and it was formerly known as "Gar
 Codes that are interesting or useful go to their corresponding folder and or subfolder named after their tech stack. It is good to keep these codes somewhere handy or look for them via a system-wide search.
 
 ## Usage
-Clone
 ```git
 git clone https://github.com/iliyalesani/Archive.git && vscode Archive
 ```
