@@ -1,6 +1,8 @@
 # Archive
 Archive is a collection of codes from different programming languages.
-![logo](https://raw.githubusercontent.com/iliyalesani/Archive/master/archivelogo.png?raw=true | width=50)
+
+![](https://raw.githubusercontent.com/iliyalesani/Archive/master/archivelogo.png | width=50)
+
 This repository serves as a dumpster for codes and it was formerly known as "Garbage". 
 
 ## Purpose
