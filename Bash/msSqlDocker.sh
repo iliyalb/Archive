@@ -1,0 +1,1 @@
+sudo docker pull microsoft/mssql-server-linux | sudo docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=compl3x!ty' -p 1433:1433 -d microsoft/mssql-server-linux
